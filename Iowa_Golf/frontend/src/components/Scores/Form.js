@@ -1,38 +1,37 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { addCourse } from "../../actions/courses";
+import { addScore } from "../../actions/scores";
 
 export class Form extends Component {
   state = {
-    course_name: "",
-    course_location: "",
-    image_url: "",
-    hole_1_par: "0",
-    hole_2_par: "0",
-    hole_3_par: 0,
-    hole_4_par: 0,
-    hole_5_par: 0,
-    hole_6_par: 0,
-    hole_7_par: 0,
-    hole_8_par: 0,
-    hole_9_par: 0,
-    hole_10_par: 0,
-    hole_11_par: 0,
-    hole_12_par: 0,
-    hole_13_par: 0,
-    hole_14_par: 0,
-    hole_15_par: 0,
-    hole_16_par: 0,
-    hole_17_par: 0,
-    hole_18_par: 0,
-    front_9_par: 0,
-    back_9_par: 0,
-    full_18_par: 0,
+    username: "",
+    coursename: "",
+    hole_1_score: 0,
+    hole_2_score: 0,
+    hole_3_score: 0,
+    hole_4_score: 0,
+    hole_5_score: 0,
+    hole_6_score: 0,
+    hole_7_score: 0,
+    hole_8_score: 0,
+    hole_9_score: 0,
+    hole_10_score: 0,
+    hole_11_score: 0,
+    hole_12_score: 0,
+    hole_13_score: 0,
+    hole_14_score: 0,
+    hole_15_score: 0,
+    hole_16_score: 0,
+    hole_17_score: 0,
+    hole_18_score: 0,
+    front_9_score: 0,
+    back_9_score: 0,
+    full_18_score: 0,
   };
 
   static propTypes = {
-    addCourse: PropTypes.func.isRequired,
+    addScore: PropTypes.func.isRequired,
   };
 
   onChange = (event) =>
@@ -41,351 +40,338 @@ export class Form extends Component {
   onSubmit = (event) => {
     event.preventDefault();
     const {
-      course_name,
-      course_location,
-      image_url,
-      hole_1_par,
-      hole_2_par,
-      hole_3_par,
-      hole_4_par,
-      hole_5_par,
-      hole_6_par,
-      hole_7_par,
-      hole_8_par,
-      hole_9_par,
-      hole_10_par,
-      hole_11_par,
-      hole_12_par,
-      hole_13_par,
-      hole_14_par,
-      hole_15_par,
-      hole_16_par,
-      hole_17_par,
-      hole_18_par,
-      front_9_par,
-      back_9_par,
-      full_18_par,
+      username,
+      coursename,
+      hole_1_score,
+      hole_2_score,
+      hole_3_score,
+      hole_4_score,
+      hole_5_score,
+      hole_6_score,
+      hole_7_score,
+      hole_8_score,
+      hole_9_score,
+      hole_10_score,
+      hole_11_score,
+      hole_12_score,
+      hole_13_score,
+      hole_14_score,
+      hole_15_score,
+      hole_16_score,
+      hole_17_score,
+      hole_18_score,
+      front_9_score,
+      back_9_score,
+      full_18_score,
     } = this.state;
     const course = {
-      course_name,
-      course_location,
-      image_url,
-      hole_1_par,
-      hole_2_par,
-      hole_3_par,
-      hole_4_par,
-      hole_5_par,
-      hole_6_par,
-      hole_7_par,
-      hole_8_par,
-      hole_9_par,
-      hole_10_par,
-      hole_11_par,
-      hole_12_par,
-      hole_13_par,
-      hole_14_par,
-      hole_15_par,
-      hole_16_par,
-      hole_17_par,
-      hole_18_par,
-      front_9_par,
-      back_9_par,
-      full_18_par,
+      username,
+      coursename,
+      hole_1_score,
+      hole_2_score,
+      hole_3_score,
+      hole_4_score,
+      hole_5_score,
+      hole_6_score,
+      hole_7_score,
+      hole_8_score,
+      hole_9_score,
+      hole_10_score,
+      hole_11_score,
+      hole_12_score,
+      hole_13_score,
+      hole_14_score,
+      hole_15_score,
+      hole_16_score,
+      hole_17_score,
+      hole_18_score,
+      front_9_score,
+      back_9_score,
+      full_18_score,
     };
-    this.props.addCourse(course);
-    console.log(course);
+    this.props.addScore(score);
+    console.log(score);
   };
 
   render() {
     const {
-      course_name,
-      course_location,
-      image_url,
-      hole_1_par,
-      hole_2_par,
-      hole_3_par,
-      hole_4_par,
-      hole_5_par,
-      hole_6_par,
-      hole_7_par,
-      hole_8_par,
-      hole_9_par,
-      hole_10_par,
-      hole_11_par,
-      hole_12_par,
-      hole_13_par,
-      hole_14_par,
-      hole_15_par,
-      hole_16_par,
-      hole_17_par,
-      hole_18_par,
-      front_9_par,
-      back_9_par,
-      full_18_par,
+      username,
+      coursename,
+      hole_1_score,
+      hole_2_score,
+      hole_3_score,
+      hole_4_score,
+      hole_5_score,
+      hole_6_score,
+      hole_7_score,
+      hole_8_score,
+      hole_9_score,
+      hole_10_score,
+      hole_11_score,
+      hole_12_score,
+      hole_13_score,
+      hole_14_score,
+      hole_15_score,
+      hole_16_score,
+      hole_17_score,
+      hole_18_score,
+      front_9_score,
+      back_9_score,
+      full_18_score,
     } = this.state;
     return (
       <div className="card card-body mt-4 mb-4">
-        <h1>Add Course</h1>
+        <h1>Add Score</h1>
         <form onSubmit={this.onSubmit}>
+          <div className="form-group">
+            <label>User Name</label>
+            <input
+              className="form-control"
+              type="text"
+              name="username"
+              onChange={this.onChange}
+              value={username}
+            />
+          </div>
           <div className="form-group">
             <label>Course Name</label>
             <input
               className="form-control"
               type="text"
-              name="course_name"
+              name="coursename"
               onChange={this.onChange}
-              value={course_name}
-            />
-          </div>
-          <div className="form-group">
-            <label>Course Location</label>
-            <input
-              className="form-control"
-              type="text"
-              name="course_location"
-              onChange={this.onChange}
-              value={course_location}
-            />
-          </div>
-          <div className="form-group">
-            <label>Image</label>
-            <input
-              className="form-control"
-              type="text"
-              name="image_url"
-              onChange={this.onChange}
-              value={image_url}
+              value={coursename}
             />
           </div>
           <div>
             <label>Hole 1</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="hole_1_par"
+              name="hole_1_score"
               onChange={this.onChange}
-              value={hole_1_par}
+              value={hole_1_score}
             />
           </div>
           <div>
             <label>Hole 2</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="hole_2_par"
+              name="hole_2_score"
               onChange={this.onChange}
-              value={hole_2_par}
+              value={hole_2_score}
             />
           </div>
           <div>
             <label>Hole 3</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="hole_3_par"
+              name="hole_3_score"
               onChange={this.onChange}
-              value={hole_3_par}
+              value={hole_3_score}
             />
           </div>
           <div>
             <label>Hole 2</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="hole_4_par"
+              name="hole_4_score"
               onChange={this.onChange}
-              value={hole_4_par}
+              value={hole_4_score}
             />
           </div>
           <div>
             <label>Hole 5</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="hole_5_par"
+              name="hole_5_score"
               onChange={this.onChange}
-              value={hole_5_par}
+              value={hole_5_score}
             />
           </div>
           <div>
             <label>Hole 6</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="hole_6_par"
+              name="hole_6_score"
               onChange={this.onChange}
-              value={hole_6_par}
+              value={hole_6_score}
             />
           </div>
           <div>
             <label>Hole 7</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="hole_7_par"
+              name="hole_7_score"
               onChange={this.onChange}
-              value={hole_7_par}
+              value={hole_7_score}
             />
           </div>
           <div>
             <label>Hole 8</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="hole_8_par"
+              name="hole_8_score"
               onChange={this.onChange}
-              value={hole_8_par}
+              value={hole_8_score}
             />
           </div>
           <div>
             <label>Hole 9</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="hole_9_par"
+              name="hole_9_score"
               onChange={this.onChange}
-              value={hole_9_par}
+              value={hole_9_score}
             />
           </div>
           <div>
             <label>Hole 10</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="hole_10_par"
+              name="hole_10_score"
               onChange={this.onChange}
-              value={hole_10_par}
+              value={hole_10_score}
             />
           </div>
           <div>
             <label>Hole 11</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="hole_11_par"
+              name="hole_11_score"
               onChange={this.onChange}
-              value={hole_11_par}
+              value={hole_11_score}
             />
           </div>
           <div>
             <label>Hole 12</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="hole_12_par"
+              name="hole_12_score"
               onChange={this.onChange}
-              value={hole_12_par}
+              value={hole_12_score}
             />
           </div>
           <div>
             <label>Hole 13</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="hole_13_par"
+              name="hole_13_score"
               onChange={this.onChange}
-              value={hole_13_par}
+              value={hole_13_score}
             />
           </div>
           <div>
             <label>Hole 14</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="hole_14_par"
+              name="hole_14_score"
               onChange={this.onChange}
-              value={hole_14_par}
+              value={hole_14_score}
             />
           </div>
           <div>
             <label>Hole 15</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="hole_15_par"
+              name="hole_15_score"
               onChange={this.onChange}
-              value={hole_15_par}
+              value={hole_15_score}
             />
           </div>
           <div>
             <label>Hole 16</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="hole_16_par"
+              name="hole_16_score"
               onChange={this.onChange}
-              value={hole_16_par}
+              value={hole_16_score}
             />
           </div>
           <div>
             <label>Hole 17</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="hole_17_par"
+              name="hole_17_score"
               onChange={this.onChange}
-              value={hole_17_par}
+              value={hole_17_score}
             />
           </div>
           <div>
             <label>Hole 18</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="hole_18_par"
+              name="hole_18_score"
               onChange={this.onChange}
-              value={hole_18_par}
+              value={hole_18_score}
             />
           </div>
           <div>
             <label>Front 9</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="front_9_par"
+              name="front_9_score"
               onChange={this.onChange}
-              value={front_9_par}
+              value={front_9_score}
             />
           </div>
           <div>
             <label>Back 9</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="back_9_par"
+              name="back_9_score"
               onChange={this.onChange}
-              value={back_9_par}
+              value={back_9_score}
             />
           </div>
           <div>
             <label>Full 18</label>
-            <label>Par</label>
+            <label>score</label>
             <input
               className=""
               type="number"
-              name="full_18_par"
+              name="full_18_score"
               onChange={this.onChange}
-              value={full_18_par}
+              value={full_18_score}
             />
           </div>
           <div className="form-group">
@@ -399,4 +385,4 @@ export class Form extends Component {
   }
 }
 
-export default connect(null, { addCourse })(Form);
+export default connect(null, { addScore })(Form);

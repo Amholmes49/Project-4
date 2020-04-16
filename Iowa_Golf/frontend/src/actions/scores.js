@@ -1,9 +1,9 @@
 import axios from "axios";
-import { GET_SCORES } from "./types";
+import { GET_SCORES, ADD_SCORE } from "./types";
 
 export const getScores = () => (dispatch) => {
   axios
-    .get("/api/Scores/")
+    .get("/api/scores/")
     .then((res) => {
       dispatch({
         type: GET_SCORES,
@@ -25,14 +25,14 @@ export const getScores = () => (dispatch) => {
 //     .catch((err) => console.log(err));
 // };
 
-// export const addCourse = (course) => (dispatch) => {
-//   axios
-//     .post("/api/courses/", course)
-//     .then((res) => {
-//       dispatch({
-//         type: ADD_COURSE,
-//         payload: res.data,
-//       });
-//     })
-//     .catch((err) => console.log(err));
-// };
+export const addScore = (score) => (dispatch) => {
+  axios
+    .post("/api/scores/", score)
+    .then((res) => {
+      dispatch({
+        type: ADD_SCORE,
+        payload: res.data,
+      });
+    })
+    .catch((err) => console.log(err));
+};

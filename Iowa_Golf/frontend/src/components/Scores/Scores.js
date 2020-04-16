@@ -29,8 +29,7 @@ export class Scores extends Component {
           <tbody>
             {this.props.scores.map((score) => (
               <tr key={score.id}>
-                {/* <td>{player.id}</td> */}
-                <td>{score.username}</td>
+                <td>{score.username.user_name}</td>
                 <td>{score.coursename}</td>
                 <td>
                   {/* <button

@@ -7,6 +7,9 @@ class Player(models.Model):
     email = models.EmailField(max_length=100)
     handicap = models.IntegerField(default=0)
 
+    def __str__(self):
+        return self.user_name
+
 class Course(models.Model):
     course_name = models.CharField(max_length=20)
     course_location = models.CharField(max_length=100)
@@ -33,6 +36,8 @@ class Course(models.Model):
     back_9_par = models.IntegerField(default = 0)
     full_18_par = models.IntegerField(default = 0)
 
+    def __str__(self):
+        return self.course_name
 
 class Score(models.Model):
     username = models.ForeignKey(Player, on_delete = models.CASCADE, related_name = 'username')
@@ -58,3 +63,6 @@ class Score(models.Model):
     front_9_score = models.IntegerField(default = 0)
     back_9_score = models.IntegerField(default = 0)
     full_18_score = models.IntegerField(default = 0)
+
+    def __str__(self):
+        return "aaron"
