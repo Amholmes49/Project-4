@@ -3,4 +3,5 @@ export const DELETE_PLAYER = "DELETE_PLAYER";
 export const ADD_PLAYER = "ADD_PLAYER";
 
 export const GET_COURSES = "GET_COURSES";
+export const DELETE_COURSE = "DELETE_COURSE";
 

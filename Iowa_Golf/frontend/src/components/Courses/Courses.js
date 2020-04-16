@@ -7,7 +7,7 @@ export class Courses extends Component {
   static propTypes = {
     courses: PropTypes.array.isRequired,
     getCourses: PropTypes.func.isRequired,
-    // deleteCourses: PropTypes.func.isRequired,
+    deleteCourses: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
