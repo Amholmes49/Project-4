@@ -1,48 +1,44 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getPlayers, deletePlayer } from "../../actions/players";
+import { getScores } from "../../actions/scores";
 
-export class Players extends Component {
+export class Scores extends Component {
   static propTypes = {
-    players: PropTypes.array.isRequired,
-    getPlayers: PropTypes.func.isRequired,
-    deletePlayer: PropTypes.func.isRequired,
+    scores: PropTypes.array.isRequired,
+    getScores: PropTypes.func.isRequired,
+    // deleteScores: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
-    this.props.getPlayers();
+    this.props.getScores();
   }
 
   render() {
     return (
       <Fragment>
-        <h1>Player List</h1>
+        <h1>Scores</h1>
         <table className="table table-striped">
           <thead>
             <tr>
               {/* <th>ID</th> */}
-              <th>Name</th>
               <th>User Name</th>
-              <th>Email</th>
-              <th>Handicap</th>
+              <th>Course Name</th>
             </tr>
           </thead>
           <tbody>
-            {this.props.players.map((player) => (
-              <tr key={player.id}>
+            {this.props.scores.map((score) => (
+              <tr key={score.id}>
                 {/* <td>{player.id}</td> */}
-                <td>{player.full_name}</td>
-                <td>{player.user_name}</td>
-                <td>{player.email}</td>
-                <td>{player.handicap}</td>
+                <td>{score.username}</td>
+                <td>{score.coursename}</td>
                 <td>
-                  <button
-                    onClick={this.props.deletePlayer.bind(this, player.id)}
+                  {/* <button
+                    onClick={this.props.deleteCourse.bind(this, course.id)}
                     className="btn btn-danger btn-sm"
                   >
                     Delete
-                  </button>
+                  </button> */}
                 </td>
               </tr>
             ))}
@@ -54,6 +50,6 @@ export class Players extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  players: state.players.players,
+  scores: state.scores.scores,
 });
-export default connect(mapStateToProps, { getPlayers, deletePlayer })(Players);
+export default connect(mapStateToProps, { getScores })(Scores);

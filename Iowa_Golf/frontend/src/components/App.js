@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import Header from "./layout/Header";
 import Dashboard from "./Players/Dashboard";
 import Dashboard_Courses from "./Courses/Dashboard_Courses";
+import Dashboard_Scores from "./Scores/Dashboard_Scores";
 import { Provider } from "react-redux";
 import store from "../store";
 
@@ -13,7 +14,7 @@ class App extends Component {
         <Fragment>
           <Header />
           <div className="container">
-            <Dashboard_Courses />
+            <Dashboard_Scores />
           </div>
         </Fragment>
       </Provider>
