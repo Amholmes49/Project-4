@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { addPlayer } from "../../actions/players";
 
 export class Form extends Component {
   state = {
@@ -8,12 +11,19 @@ export class Form extends Component {
     handicap: "",
   };
 
+  static propTypes = {
+    addPlayer: PropTypes.func.isRequired,
+  };
+
   onChange = (event) =>
     this.setState({ [event.target.name]: event.target.value });
 
   onSubmit = (event) => {
     event.preventDefault();
-    console.log("submit");
+    const { full_name, user_name, email, handicap } = this.state;
+    const player = { full_name, user_name, email, handicap };
+    this.props.addPlayer(player);
+    console.log(player);
   };
 
   render() {
@@ -29,7 +39,7 @@ export class Form extends Component {
               type="text"
               name="full_name"
               onChange={this.onChange}
-              value={name}
+              value={full_name}
             />
           </div>
           <div className="form-group">
@@ -39,7 +49,7 @@ export class Form extends Component {
               type="text"
               name="user_name"
               onChange={this.onChange}
-              value={name}
+              value={user_name}
             />
           </div>
           <div className="form-group">
@@ -73,4 +83,4 @@ export class Form extends Component {
   }
 }
 
-export default Form;
+export default connect(null, { addPlayer })(Form);
