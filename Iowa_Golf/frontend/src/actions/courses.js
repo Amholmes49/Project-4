@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_COURSES, DELETE_COURSE } from "./types";
+import { GET_COURSES, DELETE_COURSE, ADD_COURSE } from "./types";
 
 export const getCourses = () => (dispatch) => {
     axios
@@ -25,14 +25,14 @@ export const deleteCourse = (id) => (dispatch) => {
         .catch((err) => console.log(err));
 };
 
-// export const addPlayer = (player) => (dispatch) => {
-//   axios
-//     .post("/api/players/", player)
-//     .then((res) => {
-//       dispatch({
-//         type: ADD_PLAYER,
-//         payload: res.data,
-//       });
-//     })
-//     .catch((err) => console.log(err));
-// };
+export const addCourse = (course) => (dispatch) => {
+    axios
+        .post("/api/courses/", course)
+        .then((res) => {
+            dispatch({
+                type: ADD_COURSE,
+                payload: res.data,
+            });
+        })
+        .catch((err) => console.log(err));
+};

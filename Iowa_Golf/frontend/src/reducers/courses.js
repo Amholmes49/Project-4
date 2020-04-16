@@ -1,4 +1,4 @@
-import { GET_COURSES, DELETE_COURSE } from "../actions/types.js";
+import { GET_COURSES, DELETE_COURSE, ADD_COURSE } from "../actions/types.js";
 
 const initialState = {
     courses: [],
@@ -16,11 +16,11 @@ export default function (state = initialState, action) {
                 ...state,
                 courses: state.courses.filter((course) => course.id !== action.payload),
             };
-        //     case ADD_COURSE:
-        //       return {
-        //         ...state,
-        //         players: [...state.players, action.payload],
-        //       };
+        case ADD_COURSE:
+            return {
+                ...state,
+                courses: [...state.courses, action.payload],
+            };
         default:
             return state;
     }
