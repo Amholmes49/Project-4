@@ -1,27 +1,27 @@
-import { GET_COURSES, DELETE_COURSE } from "../actions/types.js";
+import { GET_COURSES, DELETE_COURSE, ADD_COURSE } from "../actions/types.js";
 
 const initialState = {
-    courses: [],
+  courses: [],
 };
 
 export default function (state = initialState, action) {
-    switch (action.type) {
-        case GET_COURSES:
-            return {
-                ...state,
-                courses: action.payload,
-            };
-        case DELETE_COURSE:
-            return {
-                ...state,
-                courses: state.courses.filter((course) => course.id !== action.payload),
-            };
-        //     case ADD_COURSE:
-        //       return {
-        //         ...state,
-        //         players: [...state.players, action.payload],
-        //       };
-        default:
-            return state;
-    }
+  switch (action.type) {
+    case GET_COURSES:
+      return {
+        ...state,
+        courses: action.payload,
+      };
+    case DELETE_COURSE:
+      return {
+        ...state,
+        courses: state.courses.filter((course) => course.id !== action.payload),
+      };
+    case ADD_COURSE:
+      return {
+        ...state,
+        courses: [...state.courses, action.payload],
+      };
+    default:
+      return state;
+  }
 }
