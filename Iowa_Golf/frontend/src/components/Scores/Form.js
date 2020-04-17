@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { addScore } from "../../actions/scores";
+import { addScore, getScores } from "../../actions/scores";
+import { getPlayers } from "../../actions/players";
+import { getCourses } from "../../actions/courses";
 
 export class Form extends Component {
   state = {
@@ -32,7 +34,13 @@ export class Form extends Component {
 
   static propTypes = {
     addScore: PropTypes.func.isRequired,
+    scores: PropTypes.array.isRequired,
   };
+  componentDidMount() {
+    this.props.getScores();
+    this.props.getPlayers();
+    this.props.getCourses();
+  }
 
   onChange = (event) =>
     this.setState({ [event.target.name]: event.target.value });
@@ -94,6 +102,7 @@ export class Form extends Component {
   };
 
   render() {
+    console.log(this.props.courses);
     const {
       username,
       coursename,
@@ -119,29 +128,44 @@ export class Form extends Component {
       back_9_score,
       full_18_score,
     } = this.state;
+
+    let allUsernames = this.props.players.map((player) => {
+      return <option value={player.user_name}>{player.user_name}</option>;
+    });
+    let allCoursenames = this.props.courses.map((course) => {
+      return <option value={course.course_name}>{course.course_name}</option>;
+    });
+    // const allUsernames = {this.props.scores.map((score) => (
+    //   return <option value={score.username.user_name}>
+    // ))}
+
     return (
       <div className="card card-body mt-4 mb-4">
         <h1>Add Score</h1>
-        <form onSubmit={this.onSubmit}>
+        <form onSubmit={this.onSubmit} onChange={this.onChange}>
           <div className="form-group">
             <label>User Name</label>
-            <input
+            <select
               className="form-control"
-              type="text"
+              placeholder="User Name"
               name="username"
-              onChange={this.onChange}
               value={username}
-            />
+            >
+              <option value=""></option>
+              {allUsernames}
+            </select>
           </div>
           <div className="form-group">
             <label>Course Name</label>
-            <input
+            <select
               className="form-control"
               type="text"
               name="coursename"
-              onChange={this.onChange}
               value={coursename}
-            />
+            >
+              <option value=""></option>
+              {allCoursenames}
+            </select>
           </div>
           <div>
             <label>Hole 1</label>
@@ -384,5 +408,14 @@ export class Form extends Component {
     );
   }
 }
-
-export default connect(null, { addScore })(Form);
+const mapStateToProps = (state) => ({
+  scores: state.scores.scores,
+  players: state.players.players,
+  courses: state.courses.courses,
+});
+export default connect(mapStateToProps, {
+  addScore,
+  getScores,
+  getPlayers,
+  getCourses,
+})(Form);
