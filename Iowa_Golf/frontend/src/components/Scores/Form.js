@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { addScore, getScores } from "../../actions/scores";
 import { getPlayers } from "../../actions/players";
 import { getCourses } from "../../actions/courses";
-
+import "./CSS/form.css";
 
 export class Form extends Component {
   constructor(props) {
@@ -47,6 +47,9 @@ export class Form extends Component {
   }
 
   onChange = (event) =>
+    this.setState({ [event.target.name]: event.target.value });
+
+  onload = (event) =>
     this.setState({ [event.target.name]: event.target.value });
 
   onSubmit = (event) => {
@@ -153,9 +156,9 @@ export class Form extends Component {
     console.log(currentCourseId)
     // console.log(this.props.courses[0].id)
     return (
-      <div className="card card-body mt-4 mb-4">
+      <div className="card card-body mt-4 mb-4 addscore">
         <h1>Add Score</h1>
-        <form onSubmit={this.onSubmit} onChange={this.onChange}>
+        <form className="scoreform" onSubmit={this.onSubmit} onChange={this.onChange}>
           <div className="form-group">
             <label>User Name</label>
             <select
@@ -174,241 +177,245 @@ export class Form extends Component {
               className="form-control"
               type="text"
               name="coursename"
+              onLoadedDataCapture={this.onload}
               value={coursename}
             >
-              <option value="">{currentCourse[0].course_name}</option>
+              <option >{currentCourse[0].course_name}</option>
             </select>
           </div>
-          <div>
-            <label>Hole 1</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="hole_1_score"
-              onChange={this.onChange}
-              value={hole_1_score}
-            />
-          </div>
-          <div>
-            <label>Hole 2</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="hole_2_score"
-              onChange={this.onChange}
-              value={hole_2_score}
-            />
-          </div>
-          <div>
-            <label>Hole 3</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="hole_3_score"
-              onChange={this.onChange}
-              value={hole_3_score}
-            />
-          </div>
-          <div>
-            <label>Hole 2</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="hole_4_score"
-              onChange={this.onChange}
-              value={hole_4_score}
-            />
-          </div>
-          <div>
-            <label>Hole 5</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="hole_5_score"
-              onChange={this.onChange}
-              value={hole_5_score}
-            />
-          </div>
-          <div>
-            <label>Hole 6</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="hole_6_score"
-              onChange={this.onChange}
-              value={hole_6_score}
-            />
-          </div>
-          <div>
-            <label>Hole 7</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="hole_7_score"
-              onChange={this.onChange}
-              value={hole_7_score}
-            />
-          </div>
-          <div>
-            <label>Hole 8</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="hole_8_score"
-              onChange={this.onChange}
-              value={hole_8_score}
-            />
-          </div>
-          <div>
-            <label>Hole 9</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="hole_9_score"
-              onChange={this.onChange}
-              value={hole_9_score}
-            />
-          </div>
-          <div>
-            <label>Hole 10</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="hole_10_score"
-              onChange={this.onChange}
-              value={hole_10_score}
-            />
-          </div>
-          <div>
-            <label>Hole 11</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="hole_11_score"
-              onChange={this.onChange}
-              value={hole_11_score}
-            />
-          </div>
-          <div>
-            <label>Hole 12</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="hole_12_score"
-              onChange={this.onChange}
-              value={hole_12_score}
-            />
-          </div>
-          <div>
-            <label>Hole 13</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="hole_13_score"
-              onChange={this.onChange}
-              value={hole_13_score}
-            />
-          </div>
-          <div>
-            <label>Hole 14</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="hole_14_score"
-              onChange={this.onChange}
-              value={hole_14_score}
-            />
-          </div>
-          <div>
-            <label>Hole 15</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="hole_15_score"
-              onChange={this.onChange}
-              value={hole_15_score}
-            />
-          </div>
-          <div>
-            <label>Hole 16</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="hole_16_score"
-              onChange={this.onChange}
-              value={hole_16_score}
-            />
-          </div>
-          <div>
-            <label>Hole 17</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="hole_17_score"
-              onChange={this.onChange}
-              value={hole_17_score}
-            />
-          </div>
-          <div>
-            <label>Hole 18</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="hole_18_score"
-              onChange={this.onChange}
-              value={hole_18_score}
-            />
-          </div>
-          <div>
-            <label>Front 9</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="front_9_score"
-              onChange={this.onChange}
-              value={front_9_score}
-            />
-          </div>
-          <div>
-            <label>Back 9</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="back_9_score"
-              onChange={this.onChange}
-              value={back_9_score}
-            />
-          </div>
-          <div>
-            <label>Full 18</label>
-            <label>score</label>
-            <input
-              className=""
-              type="number"
-              name="full_18_score"
-              onChange={this.onChange}
-              value={full_18_score}
-            />
+          <div className="holenumbercontainer">
+
+            <div className="holenumber holeone">
+              <label>Hole 1</label>
+              <label className="holeonelabel">score</label>
+              <input
+                className=""
+                type="number"
+                name="hole_1_score"
+                onChange={this.onChange}
+                value={hole_1_score}
+              />
+            </div>
+            <div>
+              <label>Hole 2</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="hole_2_score"
+                onChange={this.onChange}
+                value={hole_2_score}
+              />
+            </div>
+            <div>
+              <label>Hole 3</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="hole_3_score"
+                onChange={this.onChange}
+                value={hole_3_score}
+              />
+            </div>
+            <div>
+              <label>Hole 2</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="hole_4_score"
+                onChange={this.onChange}
+                value={hole_4_score}
+              />
+            </div>
+            <div>
+              <label>Hole 5</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="hole_5_score"
+                onChange={this.onChange}
+                value={hole_5_score}
+              />
+            </div>
+            <div>
+              <label>Hole 6</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="hole_6_score"
+                onChange={this.onChange}
+                value={hole_6_score}
+              />
+            </div>
+            <div>
+              <label>Hole 7</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="hole_7_score"
+                onChange={this.onChange}
+                value={hole_7_score}
+              />
+            </div>
+            <div>
+              <label>Hole 8</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="hole_8_score"
+                onChange={this.onChange}
+                value={hole_8_score}
+              />
+            </div>
+            <div>
+              <label>Hole 9</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="hole_9_score"
+                onChange={this.onChange}
+                value={hole_9_score}
+              />
+            </div>
+            <div>
+              <label>Hole 10</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="hole_10_score"
+                onChange={this.onChange}
+                value={hole_10_score}
+              />
+            </div>
+            <div>
+              <label>Hole 11</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="hole_11_score"
+                onChange={this.onChange}
+                value={hole_11_score}
+              />
+            </div>
+            <div>
+              <label>Hole 12</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="hole_12_score"
+                onChange={this.onChange}
+                value={hole_12_score}
+              />
+            </div>
+            <div>
+              <label>Hole 13</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="hole_13_score"
+                onChange={this.onChange}
+                value={hole_13_score}
+              />
+            </div>
+            <div>
+              <label>Hole 14</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="hole_14_score"
+                onChange={this.onChange}
+                value={hole_14_score}
+              />
+            </div>
+            <div>
+              <label>Hole 15</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="hole_15_score"
+                onChange={this.onChange}
+                value={hole_15_score}
+              />
+            </div>
+            <div>
+              <label>Hole 16</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="hole_16_score"
+                onChange={this.onChange}
+                value={hole_16_score}
+              />
+            </div>
+            <div>
+              <label>Hole 17</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="hole_17_score"
+                onChange={this.onChange}
+                value={hole_17_score}
+              />
+            </div>
+            <div>
+              <label>Hole 18</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="hole_18_score"
+                onChange={this.onChange}
+                value={hole_18_score}
+              />
+            </div>
+            <div>
+              <label>Front 9</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="front_9_score"
+                onChange={this.onChange}
+                value={front_9_score}
+              />
+            </div>
+            <div>
+              <label>Back 9</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="back_9_score"
+                onChange={this.onChange}
+                value={back_9_score}
+              />
+            </div>
+            <div>
+              <label>Full 18</label>
+              <label>score</label>
+              <input
+                className=""
+                type="number"
+                name="full_18_score"
+                onChange={this.onChange}
+                value={full_18_score}
+              />
+            </div>
           </div>
           <div className="form-group">
             <button type="submit" className="btn btn-primary">

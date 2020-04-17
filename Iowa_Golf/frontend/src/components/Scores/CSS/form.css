@@ -1,0 +1,29 @@
+.addscore{
+    background-color: blue;
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+
+.scoreform{
+    display: grid;
+    background-color: chartreuse;
+}
+
+.holenumbercontainer{
+    display: grid;
+    background-color: yellow;
+    grid-template-columns: repeat(11, 9%);
+    grid-template-rows: repeat(6, 15%);
+}
+
+.holeone{
+    grid-row: 1;
+    grid-column: 1;
+    background-color: teal;
+}
+
+.holeonelabel{
+    grid-row: 1;
+    grid-column: 2;
+    background-color: tomato;
+}
