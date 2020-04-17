@@ -30,7 +30,7 @@ export class Scores extends Component {
             {this.props.scores.map((score) => (
               <tr key={score.id}>
                 <td>{score.username.user_name}</td>
-                <td>{score.coursename}</td>
+                <td>{score.coursename.course_name}</td>
                 <td>
                   {/* <button
                     onClick={this.props.deleteCourse.bind(this, course.id)}

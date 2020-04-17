@@ -25,10 +25,14 @@ class ScoreSerializer(serializers.ModelSerializer):
         # many=True,
         read_only=True
     )
+    coursename = CourseSerializer(
+        # many=True,
+        read_only=True
+    )
     class Meta:
         model = Score
-        # fields = '__all__'
-        fields =  [ 'username', 'hole_1_score' ]
+        fields = '__all__'
+        
 
 
 
