@@ -6,6 +6,7 @@ import Dashboard_Courses from "./Courses/Dashboard_Courses";
 import Dashboard_Scores from "./Scores/Dashboard_Scores";
 import { Provider } from "react-redux";
 import store from "../store";
+// import "./App.css"
 
 class App extends Component {
   render() {

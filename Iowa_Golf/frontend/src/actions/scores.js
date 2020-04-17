@@ -26,9 +26,11 @@ export const getScores = () => (dispatch) => {
 // };
 
 export const addScore = (score) => (dispatch) => {
+  // console.log(score)
   axios
     .post("/api/scores/", score)
     .then((res) => {
+      // console.log(res)
       dispatch({
         type: ADD_SCORE,
         payload: res.data,

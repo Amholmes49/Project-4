@@ -17,6 +17,7 @@ export default function (state = initialState, action) {
     //     courses: state.courses.filter((course) => course.id !== action.payload),
     //   };
     case ADD_SCORE:
+      console.log(action)
       return {
         ...state,
         scores: [...state.scores, action.payload],

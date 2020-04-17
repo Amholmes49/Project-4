@@ -102,7 +102,7 @@ export class Form extends Component {
   };
 
   render() {
-    console.log(this.props.courses);
+    console.log(this.state);
     const {
       username,
       coursename,
