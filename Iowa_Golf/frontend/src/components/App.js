@@ -9,6 +9,8 @@ import Dashboard_Scores from "./Scores/Dashboard_Scores";
 import { Provider } from "react-redux";
 import store from "../store";
 import "./App.css"
+import Courses from "./Courses/Courses";
+import Form from "./Scores/Form";
 
 
 class App extends Component {
@@ -23,9 +25,10 @@ class App extends Component {
           </div>
 
           <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/createplayer" exact component={Dashboard} />
-            <Route path="/createcourse" exact component={Dashboard_Courses} />
+            <Route path="/" exact component={Courses} />
+            <Route path="/createplayer" component={Dashboard} />
+            <Route path="/createcourse" component={Dashboard_Courses} />
+            <Route path="/courses/:id" render={(props) => <Form {...props} />} />
           </Switch>
         </Router>
       </Provider>

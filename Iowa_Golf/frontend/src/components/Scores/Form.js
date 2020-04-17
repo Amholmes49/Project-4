@@ -5,7 +5,11 @@ import { addScore, getScores } from "../../actions/scores";
 import { getPlayers } from "../../actions/players";
 import { getCourses } from "../../actions/courses";
 
+
 export class Form extends Component {
+  constructor(props) {
+    super()
+  }
   state = {
     username: "",
     coursename: "",
@@ -102,7 +106,8 @@ export class Form extends Component {
   };
 
   render() {
-    console.log(this.state);
+    console.log(this.props)
+    // console.log(this.state);
     const {
       username,
       coursename,
@@ -135,10 +140,18 @@ export class Form extends Component {
     let allCoursenames = this.props.courses.map((course) => {
       return <option value={course.course_name}>{course.course_name}</option>;
     });
+    let currentCourseId = this.props.match.params.id
+    let currentCourse = this.props.courses.filter((course, index) => {
+      return (
+        parseInt(currentCourseId) === course.id
+      )
+    })
     // const allUsernames = {this.props.scores.map((score) => (
     //   return <option value={score.username.user_name}>
     // ))}
-
+    console.log(currentCourse)
+    console.log(currentCourseId)
+    // console.log(this.props.courses[0].id)
     return (
       <div className="card card-body mt-4 mb-4">
         <h1>Add Score</h1>
@@ -163,8 +176,7 @@ export class Form extends Component {
               name="coursename"
               value={coursename}
             >
-              <option value=""></option>
-              {allCoursenames}
+              <option value="">{currentCourse[0].course_name}</option>
             </select>
           </div>
           <div>

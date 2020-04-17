@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getCourses, deleteCourse } from "../../actions/courses";
+import { Link } from "react-router-dom";
 
 export class Courses extends Component {
   static propTypes = {
@@ -30,7 +31,9 @@ export class Courses extends Component {
             {this.props.courses.map((course) => (
               <tr key={course.id}>
                 {/* <td>{player.id}</td> */}
-                <td>{course.course_name}</td>
+                <Link to={`/courses/${course.id}`}>
+                  <td>{course.course_name}</td>
+                </Link>
                 <td>{course.course_location}</td>
                 <td>
                   <button

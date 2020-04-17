@@ -31,7 +31,7 @@ export class Header extends Component {
           <Link to='/createcourse'>
             <button type="button" class="btn btn-secondary btn-sm">Create Course</button>
           </Link>
-          <ul className="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
+          {/* <ul className="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
           <form className="form-inline my-2 my-lg-0">
             <input
               className="form-control mr-sm-2"
@@ -45,7 +45,7 @@ export class Header extends Component {
             >
               Search
             </button>
-          </form>
+          </form> */}
         </div>
       </nav>
     );
