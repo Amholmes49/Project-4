@@ -21,14 +21,14 @@ class CourseSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class ScoreSerializer(serializers.ModelSerializer):
-    username = PlayerSerializer(
-        # many=True,
-        read_only=True
-    )
-    coursename = CourseSerializer(
-        # many=True,
-        read_only=True
-    )
+    # username = PlayerSerializer(
+    #     # many=True,
+    #     read_only=True
+    # )
+    # coursename = CourseSerializer(
+    #     # many=True,
+    #     read_only=True
+    # )
     class Meta:
         model = Score
         fields = '__all__'

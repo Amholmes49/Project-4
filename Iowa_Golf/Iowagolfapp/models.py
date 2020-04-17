@@ -40,8 +40,8 @@ class Course(models.Model):
         return self.course_name
 
 class Score(models.Model):
-    username = models.ForeignKey(Player, on_delete = models.CASCADE, related_name = 'username')
-    coursename = models.ForeignKey(Course, on_delete = models.CASCADE, related_name = 'coursename')
+    username = models.CharField(max_length=20) 
+    coursename = models.CharField(max_length=20)
     hole_1_score = models.IntegerField(default = 0)
     hole_2_score = models.IntegerField(default = 0)
     hole_3_score = models.IntegerField(default = 0)

@@ -72,7 +72,7 @@ export class Form extends Component {
       back_9_score,
       full_18_score,
     } = this.state;
-    const course = {
+    const score = {
       username,
       coursename,
       hole_1_score,
