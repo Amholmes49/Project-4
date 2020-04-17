@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import ReactDOM, { BrowserRouter as Router, Route, Link, Switch, Redirect } from "react-dom";
+
 
 export class Header extends Component {
   render() {
@@ -19,7 +21,9 @@ export class Header extends Component {
           <a className="navbar-brand" href="#">
             Iowa Golf
           </a>
-          <button type="button" class="btn btn-primary btn-sm home-btn">Home</button>
+          <Link to='/'>
+            <button type="button" class="btn btn-primary btn-sm home-btn">Home</button>
+          </Link>
           <button type="button" class="btn btn-secondary btn-sm">Create Player</button>
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
           <form className="form-inline my-2 my-lg-0">
