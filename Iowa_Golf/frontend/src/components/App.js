@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
-import ReactDOM, { BrowserRouter as Router, Route, Link, Switch, Redirect } from "react-dom";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
 import Header from "./layout/Header";
 import Home from "./layout/Home";
 import Dashboard from "./Players/Dashboard";
@@ -14,13 +15,13 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-
-        <Header />
-
-        <div className="container">
-
-        </div>
         <Router>
+          <Header />
+
+          <div className="container">
+
+          </div>
+
           <Switch>
             <Route path="/" exact component={Home} />
           </Switch>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import ReactDOM, { BrowserRouter as Router, Route, Link, Switch, Redirect } from "react-dom";
+import ReactDOM from "react-dom";
+import { Link } from "react-router-dom";
 
 
 export class Header extends Component {
