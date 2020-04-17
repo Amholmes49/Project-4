@@ -24,6 +24,8 @@ class App extends Component {
 
           <Switch>
             <Route path="/" exact component={Home} />
+            <Route path="/createplayer" exact component={Dashboard} />
+            <Route path="/createcourse" exact component={Dashboard_Courses} />
           </Switch>
         </Router>
       </Provider>

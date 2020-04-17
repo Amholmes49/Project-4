@@ -25,7 +25,12 @@ export class Header extends Component {
           <Link to='/'>
             <button type="button" class="btn btn-primary btn-sm home-btn">Home</button>
           </Link>
-          <button type="button" class="btn btn-secondary btn-sm">Create Player</button>
+          <Link to='/createplayer'>
+            <button type="button" class="btn btn-secondary btn-sm">Create Player</button>
+          </Link>
+          <Link to='/createcourse'>
+            <button type="button" class="btn btn-secondary btn-sm">Create Course</button>
+          </Link>
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
           <form className="form-inline my-2 my-lg-0">
             <input
