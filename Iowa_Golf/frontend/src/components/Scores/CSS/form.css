@@ -13,17 +13,20 @@
 .holescontainer {
   display: grid;
   background-color: yellow;
-  grid-template-columns: repeat(11, 9%);
-  grid-template-rows: repeat(3, 33%);
+  grid-template-columns: repeat(11, 5%);
+  grid-template-rows: repeat(3, 50%);
   width: 65%;
+  grid-gap: 4%;
+  justify-content: center;
 }
 
 .holecontainer {
   display: grid;
-  grid-template-rows: 50% 50%;
+  grid-template-rows: 33% 33% 33%;
   background-color: teal;
   width: 100%;
   height: 100%;
+  border: 1px solid black;
 }
 
 .holenumberlabel {
@@ -31,16 +34,102 @@
   width: 100%;
   height: 100%;
   background-color: tomato;
+  border-bottom: 1px solid black;
+  text-align: center;
 }
-.holeone {
+.hole1 {
   grid-row: 1;
   grid-column: 1;
 }
-.holetwo {
+.hole2 {
   grid-row: 1;
   grid-column: 2;
 }
-.inputfield {
+.hole3 {
+  grid-row: 1;
+  grid-column: 3;
+}
+.hole4 {
+  grid-row: 1;
+  grid-column: 4;
+}
+.hole5 {
+  grid-row: 1;
+  grid-column: 5;
+}
+.hole6 {
+  grid-row: 1;
+  grid-column: 6;
+}
+.hole7 {
+  grid-row: 1;
+  grid-column: 7;
+}
+.hole8 {
+  grid-row: 1;
+  grid-column: 8;
+}
+.hole9 {
+  grid-row: 1;
+  grid-column: 9;
+}
+.hole10 {
   grid-row: 2;
+  grid-column: 1;
+}
+.hole11 {
+  grid-row: 2;
+  grid-column: 2;
+}
+.hole12 {
+  grid-row: 2;
+  grid-column: 3;
+}
+.hole13 {
+  grid-row: 2;
+  grid-column: 4;
+}
+.hole14 {
+  grid-row: 2;
+  grid-column: 5;
+}
+.hole15 {
+  grid-row: 2;
+  grid-column: 6;
+}
+.hole16 {
+  grid-row: 2;
+  grid-column: 7;
+}
+.hole17 {
+  grid-row: 2;
+  grid-column: 8;
+}
+.hole18 {
+  grid-row: 2;
+  grid-column: 9;
+}
+.front9total {
+  grid-row: 1;
+  grid-column: 10;
+}
+.back9total {
+  grid-row: 2;
+  grid-column: 10;
+}
+.full18total {
+  grid-row: 2;
+  grid-column: 11;
+}
+.inputfield {
+  grid-row: 3;
   width: 100%;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+.holeparlabel {
+  grid-row: 2;
+  height: 100%;
+  border-bottom: 1px solid black;
+  text-align: center;
 }

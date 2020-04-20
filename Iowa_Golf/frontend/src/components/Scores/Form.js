@@ -109,7 +109,8 @@ export class Form extends Component {
   };
 
   render() {
-    console.log(this.props);
+    console.log(this.state.hole_1_score);
+
     // console.log(this.state);
     const {
       username,
@@ -153,6 +154,54 @@ export class Form extends Component {
     console.log(currentCourse);
     console.log(currentCourseId);
     // console.log(this.props.courses[0].id)
+    let front9topar =
+      currentCourse[0].hole_1_par +
+      currentCourse[0].hole_2_par +
+      currentCourse[0].hole_3_par +
+      currentCourse[0].hole_4_par +
+      currentCourse[0].hole_5_par +
+      currentCourse[0].hole_6_par +
+      currentCourse[0].hole_7_par +
+      currentCourse[0].hole_8_par +
+      currentCourse[0].hole_9_par;
+
+    let back9topar =
+      currentCourse[0].hole_10_par +
+      currentCourse[0].hole_11_par +
+      currentCourse[0].hole_12_par +
+      currentCourse[0].hole_13_par +
+      currentCourse[0].hole_14_par +
+      currentCourse[0].hole_15_par +
+      currentCourse[0].hole_16_par +
+      currentCourse[0].hole_17_par +
+      currentCourse[0].hole_18_par;
+
+    let full18topar = front9topar + back9topar;
+
+    let front9toscore =
+      parseInt(this.state.hole_1_score) +
+      parseInt(this.state.hole_2_score) +
+      parseInt(this.state.hole_3_score) +
+      parseInt(this.state.hole_4_score) +
+      parseInt(this.state.hole_5_score) +
+      parseInt(this.state.hole_6_score) +
+      parseInt(this.state.hole_7_score) +
+      parseInt(this.state.hole_8_score) +
+      parseInt(this.state.hole_9_score);
+
+    let back9toscore =
+      parseInt(this.state.hole_10_score) +
+      parseInt(this.state.hole_11_score) +
+      parseInt(this.state.hole_12_score) +
+      parseInt(this.state.hole_13_score) +
+      parseInt(this.state.hole_14_score) +
+      parseInt(this.state.hole_15_score) +
+      parseInt(this.state.hole_16_score) +
+      parseInt(this.state.hole_17_score) +
+      parseInt(this.state.hole_18_score);
+
+    // let full18topar = front9topar + back9topar;
+
     return (
       <div className="card card-body mt-4 mb-4 addscore">
         <h1>Add Score</h1>
@@ -186,8 +235,11 @@ export class Form extends Component {
             </select>
           </div>
           <div className="holescontainer">
-            <div className="holecontainer holeone">
+            <div className="holecontainer hole1">
               <label className="holenumberlabel">1</label>
+              <label className="holeparlabel">
+                {currentCourse[0].hole_1_par}
+              </label>
 
               <input
                 className="inputfield"
@@ -197,8 +249,12 @@ export class Form extends Component {
                 value={hole_1_score}
               />
             </div>
-            <div className="holecontainer holetwo">
+            <div className="holecontainer hole2">
               <label className="holenumberlabel">2</label>
+              <label className="holeparlabel">
+                {currentCourse[0].hole_2_par}
+              </label>
+
               <input
                 className="inputfield"
                 type="number"
@@ -207,214 +263,268 @@ export class Form extends Component {
                 value={hole_2_score}
               />
             </div>
-            <div>
-              <label>Hole 3</label>
-              <label>score</label>
+            <div className="holecontainer hole3">
+              <label className="holenumberlabel">3</label>
+              <label className="holeparlabel">
+                {currentCourse[0].hole_3_par}
+              </label>
+
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="hole_3_score"
                 onChange={this.onChange}
                 value={hole_3_score}
               />
             </div>
-            <div>
-              <label>Hole 2</label>
-              <label>score</label>
+            <div className="holecontainer hole4">
+              <label className="holenumberlabel">4</label>
+              <label className="holeparlabel">
+                {currentCourse[0].hole_4_par}
+              </label>
+
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="hole_4_score"
                 onChange={this.onChange}
                 value={hole_4_score}
               />
             </div>
-            <div>
-              <label>Hole 5</label>
-              <label>score</label>
+            <div className="holecontainer hole5">
+              <label className="holenumberlabel">5</label>
+              <label className="holeparlabel">
+                {currentCourse[0].hole_5_par}
+              </label>
+
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="hole_5_score"
                 onChange={this.onChange}
                 value={hole_5_score}
               />
             </div>
-            <div>
-              <label>Hole 6</label>
-              <label>score</label>
+            <div className="holecontainer hole6">
+              <label className="holenumberlabel">6</label>
+              <label className="holeparlabel">
+                {currentCourse[0].hole_6_par}
+              </label>
+
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="hole_6_score"
                 onChange={this.onChange}
                 value={hole_6_score}
               />
             </div>
-            <div>
-              <label>Hole 7</label>
-              <label>score</label>
+            <div className="holecontainer hole7">
+              <label className="holenumberlabel">7</label>
+              <label className="holeparlabel">
+                {currentCourse[0].hole_7_par}
+              </label>
+
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="hole_7_score"
                 onChange={this.onChange}
                 value={hole_7_score}
               />
             </div>
-            <div>
-              <label>Hole 8</label>
-              <label>score</label>
+            <div className="holecontainer hole8">
+              <label className="holenumberlabel">8</label>
+              <label className="holeparlabel">
+                {currentCourse[0].hole_8_par}
+              </label>
+
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="hole_8_score"
                 onChange={this.onChange}
                 value={hole_8_score}
               />
             </div>
-            <div>
-              <label>Hole 9</label>
-              <label>score</label>
+            <div className="holecontainer hole9">
+              <label className="holenumberlabel">9</label>
+              <label className="holeparlabel">
+                {currentCourse[0].hole_9_par}
+              </label>
+
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="hole_9_score"
                 onChange={this.onChange}
                 value={hole_9_score}
               />
             </div>
-            <div>
-              <label>Hole 10</label>
-              <label>score</label>
+            <div className="holecontainer hole10">
+              <label className="holenumberlabel">10</label>
+              <label className="holeparlabel">
+                {currentCourse[0].hole_10_par}
+              </label>
+
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="hole_10_score"
                 onChange={this.onChange}
                 value={hole_10_score}
               />
             </div>
-            <div>
-              <label>Hole 11</label>
-              <label>score</label>
+            <div className="holecontainer hole11">
+              <label className="holenumberlabel">11</label>
+              <label className="holeparlabel">
+                {currentCourse[0].hole_11_par}
+              </label>
+
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="hole_11_score"
                 onChange={this.onChange}
                 value={hole_11_score}
               />
             </div>
-            <div>
-              <label>Hole 12</label>
-              <label>score</label>
+            <div className="holecontainer hole12">
+              <label className="holenumberlabel">12</label>
+              <label className="holeparlabel">
+                {currentCourse[0].hole_12_par}
+              </label>
+
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="hole_12_score"
                 onChange={this.onChange}
                 value={hole_12_score}
               />
             </div>
-            <div>
-              <label>Hole 13</label>
-              <label>score</label>
+            <div className="holecontainer hole13">
+              <label className="holenumberlabel">13</label>
+              <label className="holeparlabel">
+                {currentCourse[0].hole_13_par}
+              </label>
+
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="hole_13_score"
                 onChange={this.onChange}
                 value={hole_13_score}
               />
             </div>
-            <div>
-              <label>Hole 14</label>
-              <label>score</label>
+            <div className="holecontainer hole14">
+              <label className="holenumberlabel">14</label>
+              <label className="holeparlabel">
+                {currentCourse[0].hole_14_par}
+              </label>
+
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="hole_14_score"
                 onChange={this.onChange}
                 value={hole_14_score}
               />
             </div>
-            <div>
-              <label>Hole 15</label>
-              <label>score</label>
+            <div className="holecontainer hole15">
+              <label className="holenumberlabel">15</label>
+              <label className="holeparlabel">
+                {currentCourse[0].hole_15_par}
+              </label>
+
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="hole_15_score"
                 onChange={this.onChange}
                 value={hole_15_score}
               />
             </div>
-            <div>
-              <label>Hole 16</label>
-              <label>score</label>
+            <div className="holecontainer hole16">
+              <label className="holenumberlabel">16</label>
+              <label className="holeparlabel">
+                {currentCourse[0].hole_16_par}
+              </label>
+
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="hole_16_score"
                 onChange={this.onChange}
                 value={hole_16_score}
               />
             </div>
-            <div>
-              <label>Hole 17</label>
-              <label>score</label>
+            <div className="holecontainer hole17">
+              <label className="holenumberlabel">17</label>
+              <label className="holeparlabel">
+                {currentCourse[0].hole_17_par}
+              </label>
+
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="hole_17_score"
                 onChange={this.onChange}
                 value={hole_17_score}
               />
             </div>
-            <div>
-              <label>Hole 18</label>
-              <label>score</label>
+            <div className="holecontainer hole18">
+              <label className="holenumberlabel">18</label>
+              <label className="holeparlabel">
+                {currentCourse[0].hole_18_par}
+              </label>
+
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="hole_18_score"
                 onChange={this.onChange}
                 value={hole_18_score}
               />
             </div>
-            <div>
-              <label>Front 9</label>
-              <label>score</label>
+            <div className="holecontainer front9total">
+              <label className="holenumberlabel">Out</label>
+              <label className="holeparlabel">{front9topar}</label>
+
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="front_9_score"
                 onChange={this.onChange}
                 value={front_9_score}
               />
             </div>
-            <div>
-              <label>Back 9</label>
-              <label>score</label>
+            <div className="holecontainer back9total">
+              <label className="holenumberlabel">In</label>
+              <label className="holeparlabel">{back9topar}</label>
+
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="back_9_score"
                 onChange={this.onChange}
                 value={back_9_score}
               />
             </div>
-            <div>
-              <label>Full 18</label>
-              <label>score</label>
-              <input
-                className=""
+            <div className="holecontainer full18total">
+              <label className="holenumberlabel">Total</label>
+              <label className="holeparlabel">{full18topar}</label>
+
+              <div
+                className="inputfield"
                 type="number"
                 name="full_18_score"
                 onChange={this.onChange}
                 value={full_18_score}
-              />
+              >
+                {front9toscore}
+                {/* {full18score} */}
+              </div>
             </div>
           </div>
           <div className="form-group">
