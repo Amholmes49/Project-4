@@ -200,7 +200,7 @@ export class Form extends Component {
       parseInt(this.state.hole_17_score) +
       parseInt(this.state.hole_18_score);
 
-    // let full18topar = front9topar + back9topar;
+    let full18toscore = front9toscore + back9toscore;
 
     return (
       <div className="card card-body mt-4 mb-4 addscore">
@@ -491,25 +491,29 @@ export class Form extends Component {
               <label className="holenumberlabel">Out</label>
               <label className="holeparlabel">{front9topar}</label>
 
-              <input
+              <div
                 className="inputfield"
                 type="number"
-                name="front_9_score"
+                name="full_18_score"
                 onChange={this.onChange}
-                value={front_9_score}
-              />
+                value={full_18_score}
+              >
+                {front9toscore}
+              </div>
             </div>
             <div className="holecontainer back9total">
               <label className="holenumberlabel">In</label>
               <label className="holeparlabel">{back9topar}</label>
 
-              <input
+              <div
                 className="inputfield"
                 type="number"
-                name="back_9_score"
+                name="full_18_score"
                 onChange={this.onChange}
-                value={back_9_score}
-              />
+                value={full_18_score}
+              >
+                {back9toscore}
+              </div>
             </div>
             <div className="holecontainer full18total">
               <label className="holenumberlabel">Total</label>
@@ -522,8 +526,7 @@ export class Form extends Component {
                 onChange={this.onChange}
                 value={full_18_score}
               >
-                {front9toscore}
-                {/* {full18score} */}
+                {full18toscore}
               </div>
             </div>
           </div>
