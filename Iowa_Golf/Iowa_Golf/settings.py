@@ -25,7 +25,7 @@ SECRET_KEY = '2_lblnvf1%2e*9kv7xo#=^n%)65x-up3v=^_e5%bz!o!c!d7av'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['golf-iowa.herokuapp.com']
+ALLOWED_HOSTS = ['iowa-golf-newapp.herokuapp.com', 'localhost']
 
 
 # Application definition
