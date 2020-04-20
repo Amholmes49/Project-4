@@ -8,7 +8,7 @@ import "./CSS/form.css";
 
 export class Form extends Component {
   constructor(props) {
-    super()
+    super();
   }
   state = {
     username: "",
@@ -109,7 +109,7 @@ export class Form extends Component {
   };
 
   render() {
-    console.log(this.props)
+    console.log(this.props);
     // console.log(this.state);
     const {
       username,
@@ -143,22 +143,24 @@ export class Form extends Component {
     let allCoursenames = this.props.courses.map((course) => {
       return <option value={course.course_name}>{course.course_name}</option>;
     });
-    let currentCourseId = this.props.match.params.id
+    let currentCourseId = this.props.match.params.id;
     let currentCourse = this.props.courses.filter((course, index) => {
-      return (
-        parseInt(currentCourseId) === course.id
-      )
-    })
+      return parseInt(currentCourseId) === course.id;
+    });
     // const allUsernames = {this.props.scores.map((score) => (
     //   return <option value={score.username.user_name}>
     // ))}
-    console.log(currentCourse)
-    console.log(currentCourseId)
+    console.log(currentCourse);
+    console.log(currentCourseId);
     // console.log(this.props.courses[0].id)
     return (
       <div className="card card-body mt-4 mb-4 addscore">
         <h1>Add Score</h1>
-        <form className="scoreform" onSubmit={this.onSubmit} onChange={this.onChange}>
+        <form
+          className="scoreform"
+          onSubmit={this.onSubmit}
+          onChange={this.onChange}
+        >
           <div className="form-group">
             <label>User Name</label>
             <select
@@ -180,27 +182,25 @@ export class Form extends Component {
               onLoadedDataCapture={this.onload}
               value={coursename}
             >
-              <option >{currentCourse[0].course_name}</option>
+              <option>{currentCourse[0].course_name}</option>
             </select>
           </div>
-          <div className="holenumbercontainer">
+          <div className="holescontainer">
+            <div className="holecontainer holeone">
+              <label className="holenumberlabel">1</label>
 
-            <div className="holenumber holeone">
-              <label>Hole 1</label>
-              <label className="holeonelabel">score</label>
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="hole_1_score"
                 onChange={this.onChange}
                 value={hole_1_score}
               />
             </div>
-            <div>
-              <label>Hole 2</label>
-              <label>score</label>
+            <div className="holecontainer holetwo">
+              <label className="holenumberlabel">2</label>
               <input
-                className=""
+                className="inputfield"
                 type="number"
                 name="hole_2_score"
                 onChange={this.onChange}
