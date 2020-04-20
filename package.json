@@ -4,14 +4,8 @@
   "description": "# Wireframe     http://framebox.org/AKUAa-zbqYQK",
   "main": "webpack.config.js",
   "scripts": {
-    "devl": "webpack --mode development --watch ./Iowa_Golf/frontend/src/index.js --output ./Iowa_Golf/frontend/static/frontend/main.js",
-    "prod": "webpack --mode production ./Iowa_Golf/frontend/src/index.js --output ./Iowa_Golf/frontend/static/frontend/main.js",
-    "dev": "react-scripts start",
-    "start": "serve -s build",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "dev": "webpack --mode development --watch ./Iowa_Golf/frontend/src/index.js --output ./Iowa_Golf/frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./Iowa_Golf/frontend/src/index.js --output ./Iowa_Golf/frontend/static/frontend/main.js"
   },
   "repository": {
     "type": "git",
