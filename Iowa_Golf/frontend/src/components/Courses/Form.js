@@ -191,7 +191,7 @@ export class Form extends Component {
             />
           </div>
           <div>
-            <label>Hole 2</label>
+            <label>Hole 4</label>
             <label>Par</label>
             <input
               className=""
