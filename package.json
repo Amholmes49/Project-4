@@ -5,7 +5,13 @@
   "main": "webpack.config.js",
   "scripts": {
     "dev": "webpack --mode development --watch ./Iowa_Golf/frontend/src/index.js --output ./Iowa_Golf/frontend/static/frontend/main.js",
-    "build": "webpack --mode production ./Iowa_Golf/frontend/src/index.js --output ./Iowa_Golf/frontend/static/frontend/main.js"
+    "build": "webpack --mode production ./Iowa_Golf/frontend/src/index.js --output ./Iowa_Golf/frontend/static/frontend/main.js",
+    "devl": "react-scripts start",
+    "start": "serve -s build",
+    "prod": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run prod"
   },
   "repository": {
     "type": "git",
