@@ -1,15 +1,19 @@
 .addscore {
   background-color: blue;
   display: grid;
+  background-image: url({currentCourse[0].image_url});
+
   grid-template-columns: 25% 75%;
 }
 
 .scoreform {
   display: grid;
-  background-color: chartreuse;
+
   width: 100%;
 }
-
+.courseImage {
+  grid-column: 1;
+}
 .holescontainer {
   display: grid;
   background-color: yellow;

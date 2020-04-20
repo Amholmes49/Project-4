@@ -205,6 +205,7 @@ export class Form extends Component {
     return (
       <div className="card card-body mt-4 mb-4 addscore">
         <h1>Add Score</h1>
+        <img className="courseImage" src={currentCourse[0].image_url} />
         <form
           className="scoreform"
           onSubmit={this.onSubmit}
