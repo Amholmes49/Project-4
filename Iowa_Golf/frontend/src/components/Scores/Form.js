@@ -104,9 +104,20 @@ export class Form extends Component {
       back_9_score,
       full_18_score,
     };
+    score.coursename = document.getElementById("coursename").value;
+    score.front_9_score = document.getElementById("front9totalscore").value;
+    score.back_9_score = document.getElementById("back9totalscore").value;
+    score.full_18_score = document.getElementById("full18totalscore").value;
     this.props.addScore(score);
-    console.log(score);
+    // this.setCourseState();
+    // console.log(score);
+    console.log(event.target);
+    // front_9_score.SetFieldValue((value = front9toscore));
   };
+
+  // setCourseState() {
+  //   this.setState({ coursename: currentCourse[0].course_name });
+  // }
 
   render() {
     console.log(this.state.hole_1_score);
@@ -148,6 +159,7 @@ export class Form extends Component {
     let currentCourse = this.props.courses.filter((course, index) => {
       return parseInt(currentCourseId) === course.id;
     });
+
     // const allUsernames = {this.props.scores.map((score) => (
     //   return <option value={score.username.user_name}>
     // ))}
@@ -205,13 +217,16 @@ export class Form extends Component {
     return (
       <div className="card card-body mt-4 mb-4 addscore">
         <h1>Add Score</h1>
-        <img className="courseImage" src={currentCourse[0].image_url} />
+        <div className="Infocontainer">
+          <img className="courseImage" src={currentCourse[0].image_url} />
+        </div>
+
         <form
           className="scoreform"
           onSubmit={this.onSubmit}
           onChange={this.onChange}
         >
-          <div className="form-group">
+          <div className="form-group username">
             <label>User Name</label>
             <select
               className="form-control"
@@ -223,16 +238,19 @@ export class Form extends Component {
               {allUsernames}
             </select>
           </div>
-          <div className="form-group">
+          <div className="form-group coursename">
             <label>Course Name</label>
             <select
+              id="coursename"
               className="form-control"
               type="text"
               name="coursename"
               onLoadedDataCapture={this.onload}
-              value={coursename}
+              value={currentCourse[0].course_name}
             >
-              <option>{currentCourse[0].course_name}</option>
+              <option value={currentCourse[0].course_name}>
+                {currentCourse[0].course_name}
+              </option>
             </select>
           </div>
           <div className="holescontainer">
@@ -493,11 +511,12 @@ export class Form extends Component {
               <label className="holeparlabel">{front9topar}</label>
 
               <div
+                id="front9totalscore"
                 className="inputfield"
                 type="number"
                 name="full_18_score"
                 onChange={this.onChange}
-                value={full_18_score}
+                value={front9toscore}
               >
                 {front9toscore}
               </div>
@@ -507,11 +526,12 @@ export class Form extends Component {
               <label className="holeparlabel">{back9topar}</label>
 
               <div
+                id="back9totalscore"
                 className="inputfield"
                 type="number"
                 name="full_18_score"
                 onChange={this.onChange}
-                value={full_18_score}
+                value={back9toscore}
               >
                 {back9toscore}
               </div>
@@ -521,11 +541,12 @@ export class Form extends Component {
               <label className="holeparlabel">{full18topar}</label>
 
               <div
+                id="full18totalscore"
                 className="inputfield"
                 type="number"
                 name="full_18_score"
                 onChange={this.onChange}
-                value={full_18_score}
+                value={full18toscore}
               >
                 {full18toscore}
               </div>
@@ -537,6 +558,7 @@ export class Form extends Component {
             </button>
           </div>
         </form>
+        <div className="padding"></div>
       </div>
     );
   }

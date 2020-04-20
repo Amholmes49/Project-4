@@ -1,17 +1,45 @@
 .addscore {
   background-color: blue;
   display: grid;
-  background-image: url({currentCourse[0].image_url});
-
-  grid-template-columns: 25% 75%;
+  height: 3fr;
+  grid-template-columns: 45% 55%;
 }
 
 .scoreform {
   display: grid;
-
+  grid-column: 2;
+  grid-row: 2;
   width: 100%;
 }
+.Infocontainer {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  display: grid;
+  grid-template-rows: repeat(5 20%);
+}
+.username {
+  grid-column: 1;
+  grid-row: 1;
+  width: 55%;
+  height: 10%;
+}
+.coursename {
+  grid-column: 1;
+  grid-row: 2;
+  width: 55%;
+  height: 25%;
+  margin: 8px;
+}
 .courseImage {
+  grid-column: 1;
+  grid-row: 1;
+  height: 50%;
+  width: 85%;
+  justify-content: right;
+}
+.courseNamepop {
+  color: white;
+  grid-row: 1;
   grid-column: 1;
 }
 .holescontainer {
@@ -137,4 +165,7 @@
   height: 100%;
   border-bottom: 1px solid black;
   text-align: center;
+}
+.padding {
+  padding: 200px;
 }
