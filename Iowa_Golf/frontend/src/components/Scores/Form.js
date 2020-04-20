@@ -509,7 +509,7 @@ export class Form extends Component {
             <div className="holecontainer front9total">
               <label className="holenumberlabel">Out</label>
               <label className="holeparlabel">{front9topar}</label>
-
+              <div></div>
               <div
                 id="front9totalscore"
                 className="inputfield"
