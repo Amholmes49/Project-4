@@ -27,7 +27,7 @@ export const deleteCourse = (id) => (dispatch) => {
 
 export const addCourse = (course) => (dispatch) => {
   axios
-    .post("https://iowa-golf-newapp.herokuapp.com/api/courses/", course)
+    .post("/api/courses/", course)
     .then((res) => {
       dispatch({
         type: ADD_COURSE,
