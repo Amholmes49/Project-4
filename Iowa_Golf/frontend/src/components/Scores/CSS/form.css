@@ -1,5 +1,5 @@
 .addscore {
-  background-color: blue;
+  background-color: green;
   display: grid;
   height: 3fr;
   grid-template-columns: 45% 55%;
@@ -50,6 +50,9 @@
   width: 65%;
   grid-gap: 4%;
   justify-content: center;
+}
+.addscoretag {
+  color: white;
 }
 
 .holecontainer {

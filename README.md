@@ -50,3 +50,17 @@
 - **Google Chrome Developer Tools**: used to debug and solve problems in the code
 
 - **Heroku**: used for hosting app
+
+## User Stories
+
+1. Create 3 models (Player, Scores, Courses)
+2. Build out Django backend with viewsets(CRUD)
+3. Create react front end that uses redux to connect to backend API
+4. Create list to show all course
+5. Build form to Add player and courses
+6. Build form to add scores(needs to have course and player in dropdown)
+7. Setup up post to databse that saves populated dropdown fields
+8. Add CSS to scores table(to look like a golf score card)
+9. Add authentication
+10. When user logs in the username should populate on the scores form as well as the course selected from the intial course selection.
+11. Setup a player dashboard to show player scores
