@@ -105,9 +105,9 @@ export class Form extends Component {
       full_18_score,
     };
     score.coursename = document.getElementById("coursename").value;
-    score.front_9_score = document.getElementById("front9totalscore").value;
-    score.back_9_score = document.getElementById("back9totalscore").value;
-    score.full_18_score = document.getElementById("full18totalscore").value;
+    // score.front_9_score = document.getElementById("front9totalscore").value;
+    // score.back_9_score = document.getElementById("back9totalscore").value;
+    // score.full_18_score = document.getElementById("full18totalscore").value;
     this.props.addScore(score);
     // this.setCourseState();
     // console.log(score);
